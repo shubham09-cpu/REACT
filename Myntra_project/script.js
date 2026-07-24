@@ -8,6 +8,7 @@ function Card(props) {
             <div style={{ textAlign: "center" }}>
                 <h2>{props.cloth}</h2>
                 <h1>{props.offer}</h1>
+                <h2>{props.price}</h2>
                 <h2>Shop Now</h2>
             </div>
         </div>
@@ -15,17 +16,17 @@ function Card(props) {
 }
 
 const ans = [
-    { cloth: "Shirt",       offer: "10-22% OFF", image: "https://i.pinimg.com/736x/fb/08/34/fb0834895a82675f8c893fd1f83b9f19.jpg" },
-    { cloth: "Trousers",    offer: "10-30% OFF", image: "https://i.pinimg.com/736x/54/9b/5d/549b5de639b955634f66e25b4f676620.jpg" },
-    { cloth: "Jeans",       offer: "50-70% OFF", image: "https://i.pinimg.com/1200x/27/01/ad/2701adc1e28fc775fc7c4a7b05c0cc43.jpg" },
-    { cloth: "Cargos",      offer: "80-95% OFF", image: "https://i.pinimg.com/736x/d6/38/de/d638de6408e12c500a04176deb161b49.jpg" },
-    { cloth: "Kurtas",      offer: "20-30% OFF", image: "https://i.pinimg.com/1200x/a1/90/b3/a190b3280ff540284df9a06b0bee3c20.jpg" },
-    { cloth: "Patloon",     offer: "70-30% OFF", image: "https://i.pinimg.com/736x/90/b0/a3/90b0a3144cedd9d4d9a41ef751ca05e5.jpg" },
-    { cloth: "Saree",       offer: "60-80% OFF", image: "https://i.pinimg.com/1200x/d9/d6/06/d9d606319e90bc5aea93d69e8baf4fa3.jpg" },
-    { cloth: "Suit",        offer: "10-20% OFF", image: "https://i.pinimg.com/736x/bb/07/1f/bb071fb96fc9ecf5fa3adf12fbd9bbfa.jpg" },
-    { cloth: "Shoes",       offer: "26-32% OFF", image: "https://i.pinimg.com/736x/df/5b/36/df5b36a722e622cf65a3284597f0e13a.jpg" }, 
-    { cloth: "Track Pants", offer: "20-30% OFF", image: "https://i.pinimg.com/736x/0c/93/8f/0c938f57d86d5e9a4e7b78c6eda892af.jpg" },
-    { cloth: "Accessories", offer: "15-40% OFF", image: "https://i.pinimg.com/736x/c1/1e/78/c11e785363d4d58efa166da9223bdef7.jpg" },
+    { cloth: "Shirt",       offer: "10-22% OFF", image: "https://i.pinimg.com/736x/fb/08/34/fb0834895a82675f8c893fd1f83b9f19.jpg",price=300},
+    { cloth: "Trousers",    offer: "10-30% OFF", image: "https://i.pinimg.com/736x/54/9b/5d/549b5de639b955634f66e25b4f676620.jpg",price=500},
+    { cloth: "Jeans",       offer: "50-70% OFF", image: "https://i.pinimg.com/1200x/27/01/ad/2701adc1e28fc775fc7c4a7b05c0cc43.jpg",price=200},
+    { cloth: "Cargos",      offer: "80-95% OFF", image: "https://i.pinimg.com/736x/d6/38/de/d638de6408e12c500a04176deb161b49.jpg",price=100},
+    { cloth: "Kurtas",      offer: "20-30% OFF", image: "https://i.pinimg.com/1200x/a1/90/b3/a190b3280ff540284df9a06b0bee3c20.jpg",price=900},
+    { cloth: "Patloon",     offer: "70-30% OFF", image: "https://i.pinimg.com/736x/90/b0/a3/90b0a3144cedd9d4d9a41ef751ca05e5.jpg",price=700},
+    { cloth: "Saree",       offer: "60-80% OFF", image: "https://i.pinimg.com/1200x/d9/d6/06/d9d606319e90bc5aea93d69e8baf4fa3.jpg",price=800},
+    { cloth: "Suit",        offer: "10-20% OFF", image: "https://i.pinimg.com/736x/bb/07/1f/bb071fb96fc9ecf5fa3adf12fbd9bbfa.jpg",price=350},
+    { cloth: "Shoes",       offer: "26-32% OFF", image: "https://i.pinimg.com/736x/df/5b/36/df5b36a722e622cf65a3284597f0e13a.jpg",price=600}, 
+    { cloth: "Track Pants", offer: "20-30% OFF", image: "https://i.pinimg.com/736x/0c/93/8f/0c938f57d86d5e9a4e7b78c6eda892af.jpg",price=400},
+    { cloth: "Accessories", offer: "15-40% OFF", image: "https://i.pinimg.com/736x/c1/1e/78/c11e785363d4d58efa166da9223bdef7.jpg",price=550},
 ];
 
 function Header(){
@@ -63,12 +64,15 @@ function Footer(){
 }
 
 function App() {
+    function SortArray(){
+        
+    }
     return (<>
 
         <Header/>
+        <button onClick={SortArray}>Sort the Prices</button>
         <div className="middle" style={{ display: "flex", gap: "10px", flexWrap: "wrap"}}>
-            {ans.map((value, index) => (<Card key={index} cloth={value.cloth} offer={value.offer} image={value.image}/>))}</div>
-
+            {ans.map((value, index) => (<Card key={index} cloth={value.cloth} offer={value.offer} image={value.image} price={value.price}/>))}</div>
         <Footer />
                         </>);
 }
