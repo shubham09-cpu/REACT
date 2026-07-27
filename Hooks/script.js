@@ -1,4 +1,4 @@
-import React ,{useState} from "react"
+import React ,{useEffect, useState} from "react"
 import ReactDOM from 'react-dom/client'
 
 // function Counter(){
@@ -44,3 +44,11 @@ function Main(){
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Main/>);
+
+// for primitive value
+// Agar hun red ko ek baar se jyda press krte hain to wo sirf do baar render hogaaa
+// ussse jyda nhi hogaaa . 
+
+//for reference value like arr,obj;
+// sirf ek baar hie render hogaa usee jyda nhi hogaaa.
+
