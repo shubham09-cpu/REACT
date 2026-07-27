@@ -1,18 +1,39 @@
-import React ,{useState,useEffect}from "react";
+import React ,{useState,useEffect, useCallback}from "react";
 import ReactDOM from 'react-dom/client';
 
 function PasswordGenerator(){
 
-    const[Password,setPassword]=useState("ABHAHAHAH");
+    const[Password,setPassword]=useState("");
     const[length,setLength]=useState(10);
     const[numberChanged,setnumberChanged]=useState(false);
     const[charChanged,setcharChanged]=useState(false);
+
+    const generatePass = useCallback(()=>{
+        let str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if(numberChanged)
+        {
+            str+="0123456789"
+        }
+        if(charChanged){
+            str+="+-)(*&^%$#@!~`{}";
+        }
+        let pass="";
+        for(let i=0;i<length;i++){
+            pass+=str[Math.floor(Math.random()*str.length)];
+        }
+
+        setPassword(pass);
+    },[length,numberChanged,charChanged])
+    
+    useEffect(()=>{
+        generatePass();
+    },[generatePass])
 
     return(
     <>
     <h1>{Password}</h1>
     <div className="second">
-        <input type="range" min={5} max={50} value={length} onChange={(e)=>setLength(e.target.value)}></input>
+        <input type="range" min={5} max={20} value={length} onChange={(e)=>setLength(e.target.value)}></input>
         <label>Length {length}</label>
 
         <input type="checkbox" defaultChecked={numberChanged} onChange={()=>setnumberChanged(!numberChanged)}></input>
