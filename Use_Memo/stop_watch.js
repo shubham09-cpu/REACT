@@ -32,6 +32,7 @@ function StopWatch(){
 
     return(
         <>
+        <div id="stop">
         <h1>StopWatch is : {time}</h1>
         <button onClick={start}>Start</button>
         <br></br>
@@ -40,6 +41,7 @@ function StopWatch(){
         <br></br>
         <br></br>
         <button onClick={reset}>Reset</button>
+        </div>
         </>
     )
 

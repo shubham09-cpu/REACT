@@ -3,11 +3,24 @@ body{
     margin: 0px;
     box-sizing: border-box;
     background-color: black;
-    color: white;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+#stop{
+    border: 4px solid blue;
+    background-color: wheat;
+    padding: 20px;
+    color: brown;
+}
+
+button{
+    font-size: 20px;
+    border:  1px solid brown;
+    background-color: rgb(245, 121, 121);
+
 }
 
