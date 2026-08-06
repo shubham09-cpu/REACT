@@ -6,8 +6,10 @@ const reactSlicer=createSlice({
     reducers:{
         Increment:(state)=>{state.count=state.count+1},
         Decrement:(state)=>{state.count=state.count-1},
-        Reset:(state)=>{state.count=0}
+        Reset:(state)=>{state.count=0},
+        CustomIncreser:(state,action)=>{state.count+=action.payload}
+
     }
 })
-export const{Increment,Decrement,Reset}=reactSlicer.actions;
+export const{Increment,Decrement,Reset,CustomIncreser}=reactSlicer.actions;
 export default reactSlicer.reducer;
